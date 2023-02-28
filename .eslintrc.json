@@ -37,7 +37,7 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "no-console": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "no-redeclare": "off",
     "no-unexpected-multiline": "warn",
     "no-undef": "off",
