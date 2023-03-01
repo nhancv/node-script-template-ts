@@ -71,7 +71,7 @@ cp .env.example .env
 
 ```
 # Start App
-pm2 --name thescript start start npm -- run start:prod
+pm2 --name thescript start npm -- run start:prod
 ```
 
 ## Monitor
