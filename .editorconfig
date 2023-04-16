@@ -1,6 +1,10 @@
 root = true
 
+[*]
+max_line_length = 80
+
 [**/**.{tsx,ts,json,js,css}]
+max_line_length = 120
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
