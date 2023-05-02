@@ -1,3 +1,5 @@
+import BN from 'bignumber.js';
+
 // Delay with progress
 // https://www.npmjs.com/package/cli-progress
 const cliProgress = require('cli-progress');
@@ -66,4 +68,16 @@ export const randomBool = (chance = 0.5) => {
 export const delayWrapper = async (duration, callback) => {
   await sleep(duration);
   return callback;
+};
+
+/**
+ * Safety sum of float numbers
+ * - Native way: 0.026 + 0.6245 = 0.6505000000000001
+ * - Safe way: 0.026 + 0.6245 = 0.6505
+ * @param args
+ */
+export const safeFloats = (args: number[]) => {
+  let s = 0;
+  args.forEach((v) => (s = BN(s).plus(v).toNumber()));
+  return s;
 };
