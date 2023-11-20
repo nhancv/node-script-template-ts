@@ -110,8 +110,15 @@ pm2 monit
 pm2 reload thescript --update-env
 ```
 
-## Start cluster
+## PM2 cluster with config file
 
 ```
-pm2 start pm2.config.js --env production
+# Start
+pm2 start pm2.config.js
+
+# Reload
+pm2 reload pm2.config.js
+
+# Delete
+pm2 delete pm2.config.js
 ```

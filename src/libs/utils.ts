@@ -33,8 +33,8 @@ export const sleepWithProgress = (ms) => {
 };
 
 // Delay
-export const sleep = (ms) => {
-  console.log('sleep:', ms);
+export const sleep = (ms, printLog = true) => {
+  printLog && console.log(`Sleeping ${ms / 1000} seconds`);
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
@@ -81,3 +81,20 @@ export const safeFloats = (args: number[]) => {
   args.forEach((v) => (s = BN(s).plus(v).toNumber()));
   return s;
 };
+
+export const parseBool = (n) => n === true || n === 'true' || Number(n) === 1;
+
+/**
+ * Return env variable with boolean parsed
+ * @param key
+ * @param def
+ */
+export const pEnv = (key: string, def: any = undefined) => {
+  const t = process.env[key];
+  return t === 'true' ? true : t === 'false' ? false : t ?? def;
+};
+
+/**
+ * Variable return true if dev mode
+ */
+export const isDev = pEnv('NODE_ENV') !== 'production';

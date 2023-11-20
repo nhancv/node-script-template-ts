@@ -7,12 +7,20 @@ module.exports = {
       exec_mode: 'cluster',
       autorestart: true,
       watch: true,
+      env: {
+        NODE_ENV: 'development',
+      },
       env_production: {
         NODE_ENV: 'production',
       },
-      env_development: {
-        NODE_ENV: 'development',
-      },
     },
+    // {
+    //   name: 'worker',
+    //   script: 'dist/index.js',
+    //   watch: true,
+    //   env: {
+    //     ENABLE_WORKER: true,
+    //   },
+    // },
   ],
 };
