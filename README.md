@@ -109,3 +109,9 @@ pm2 monit
 ```
 pm2 reload thescript --update-env
 ```
+
+## Start cluster
+
+```
+pm2 start pm2.config.js --env production
+```

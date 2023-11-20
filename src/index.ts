@@ -9,5 +9,6 @@ const processScript = async () => {
 processScript()
   .then(() => {
     console.log('DONE');
+    process.exit(0);
   })
   .catch((error) => console.error(error));
