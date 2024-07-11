@@ -37,6 +37,20 @@ yarn start:dev
 yarn build
 ```
 
+## Test
+
+- Run test
+
+```
+yarn test
+```
+
+- Run test coverage
+
+```
+yarn test:cov
+```
+
 # DEPLOYMENT
 
 ## Timezone
