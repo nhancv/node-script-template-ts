@@ -1,37 +1,5 @@
 import BN from 'bignumber.js';
 
-// Delay with progress
-// https://www.npmjs.com/package/cli-progress
-const cliProgress = require('cli-progress');
-export const sleepWithProgress = (ms) => {
-  const bar1 = new cliProgress.SingleBar(
-    {
-      format: 'Sleeping | {bar} {percentage}% | ETA: {eta}s | {value}/{total} | {status}: {duration}s',
-      hideCursor: true,
-      barsize: 10,
-      barCompleteChar: '*',
-      barIncompleteChar: '-',
-    },
-    cliProgress.Presets.shades_classic,
-  );
-  return new Promise((resolve) => {
-    const tick = 10;
-    // Start progress with total 100 and start value of 0
-    bar1.start(ms, 0, { status: 'Start' });
-    // Update progress with interval
-    const intervalId = setInterval(() => bar1.increment(tick), tick);
-
-    // Delay with timeout
-    const timeOutId = setTimeout(() => {
-      resolve(true);
-      bar1.update(ms, { status: 'Done' });
-      bar1.stop();
-      clearInterval(intervalId);
-      clearTimeout(timeOutId);
-    }, ms);
-  });
-};
-
 // Delay
 export const sleep = (ms, printLog = true) => {
   printLog && console.log(`Sleeping ${ms / 1000} seconds`);
