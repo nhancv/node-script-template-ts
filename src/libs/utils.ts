@@ -1,4 +1,5 @@
 import BN from 'bignumber.js';
+import { prettyNum, PRECISION_SETTING } from 'pretty-num';
 
 // Delay
 export const sleep = (ms, printLog = true) => {
@@ -66,3 +67,22 @@ export const pEnv = (key: string, def: any = undefined) => {
  * Variable return true if dev mode
  */
 export const isDev = pEnv('NODE_ENV') !== 'production';
+
+/**
+ * formatStr(0) => '0.000000000000000000'
+ * formatStr(0, 1) => '0.0'
+ * formatStr(0, 1, 4, *) => '*0.0'
+ * formatStr(0, 1, 4, *, 5, -) => '*0.0-'
+ */
+export const formatStr = (amount, decimals = 18, padStart = 0, padStartChar = '', padEnd = 0, padEndChar = '') => {
+  return prettyNum(amount, { precision: decimals, precisionSetting: PRECISION_SETTING.FIXED })
+    .padStart(padStart, padStartChar)
+    .padEnd(padEnd, padEndChar);
+};
+
+// Round decimals
+export const nround = (n) => Math.round(Number(n) * 10000) / 10000;
+// Return current timestamp in seconds
+export const nowSec = (offset = 0) => Math.floor(Date.now() / 1000) + offset;
+// Return current time with local formatted
+export const nowLocal = () => new Date();
