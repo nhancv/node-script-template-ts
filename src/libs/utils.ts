@@ -8,10 +8,10 @@ export const sleep = (ms, printLog = true) => {
 };
 
 // Remove number as key
-export const normObj = (obj, stringify = false) => {
-  for (const [key, value] of Object.entries<any>(obj)) {
-    if (!isNaN(Number(key))) delete obj[key];
-    else obj[key] = value.toString();
+export const normObj = (originalObj, stringify = false) => {
+  const obj = {};
+  for (const [key, value] of Object.entries<any>(originalObj)) {
+    if (isNaN(Number(key))) obj[key] = value?.toString();
   }
   return stringify ? JSON.stringify(obj) : obj;
 };
