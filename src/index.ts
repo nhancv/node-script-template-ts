@@ -1,6 +1,6 @@
-require('dotenv').config();
+import { sleep } from '@libs/utils';
 
-import { sleep } from './libs/utils';
+require('dotenv').config();
 
 const processScript = async () => {
   await sleep(1000);

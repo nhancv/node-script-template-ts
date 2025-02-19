@@ -1,50 +1,24 @@
 {
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
   "root": true,
   "env": {
     "node": true,
     "jest": true
   },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "project": "tsconfig.json",
-    "sourceType": "module"
-  },
-  "plugins": ["@typescript-eslint/eslint-plugin"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "ignorePatterns": [".eslintrc.json"],
   "rules": {
-    "indent": [
-      "error",
-      2,
-      {
-        "SwitchCase": 1,
-        "MemberExpression": 1,
-        "FunctionDeclaration": {
-          "parameters": "first"
-        },
-        "VariableDeclarator": {
-          "var": 2,
-          "let": 2,
-          "const": 3
-        },
-        "ArrayExpression": "first",
-        "ObjectExpression": "first",
-        "ImportDeclaration": "first",
-        "flatTernaryExpressions": true
-      }
-    ],
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "no-console": "off",
-    "no-unused-vars": "off",
-    "no-redeclare": "off",
-    "no-unexpected-multiline": "warn",
-    "no-undef": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-require-imports": "off",
+    "@typescript-eslint/no-unused-expressions": "off"
   }
 }

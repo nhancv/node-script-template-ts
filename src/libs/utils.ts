@@ -1,5 +1,5 @@
 import BN from 'bignumber.js';
-import { prettyNum, PRECISION_SETTING } from 'pretty-num';
+import { PRECISION_SETTING, prettyNum } from 'pretty-num';
 
 // Delay
 export const sleep = (ms, printLog = true) => {
@@ -60,7 +60,7 @@ export const parseBool = (n) => n === true || n === 'true' || Number(n) === 1;
  */
 export const pEnv = (key: string, def: any = undefined) => {
   const t = process.env[key];
-  return t === 'true' ? true : t === 'false' ? false : t ?? def;
+  return t === 'true' ? true : t === 'false' ? false : (t ?? def);
 };
 
 /**
