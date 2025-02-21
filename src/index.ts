@@ -1,4 +1,4 @@
-import { sleep } from '@libs/utils';
+import { sleep } from '~/libs/utils';
 
 require('dotenv').config();
 
