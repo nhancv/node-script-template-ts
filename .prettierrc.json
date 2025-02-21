@@ -14,7 +14,7 @@
       }
     }
   ],
-  "importOrder": ["^@libs/(.*)$", "^[./]"],
+  "importOrder": ["^@nestjs/(.*)$", "^@modules/(.*)$", "^@libs/(.*)$", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "plugins": ["@trivago/prettier-plugin-sort-imports"],

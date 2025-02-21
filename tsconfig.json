@@ -8,7 +8,9 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@libs/*": ["src/libs/*"]
+      "~/*": ["src/*"],
+      "@libs/*": ["src/libs/*"],
+      "@modules/*": ["src/modules/*"]
     },
     "esModuleInterop": true,
     "resolveJsonModule": true,
