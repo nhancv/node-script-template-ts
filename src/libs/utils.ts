@@ -66,7 +66,7 @@ export const pEnv = (key: string, def: any = undefined) => {
 /**
  * Variable return true if dev mode
  */
-export const isDev = () => pEnv('NODE_ENV') !== 'production';
+export const isDev = () => ['prod', 'production'].includes(pEnv('NODE_ENV'));
 
 /**
  * formatStr(0) => '0.000000000000000000'
