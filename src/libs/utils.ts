@@ -1,4 +1,5 @@
 import BN from 'bignumber.js';
+import 'dotenv/config';
 import { PRECISION_SETTING, prettyNum } from 'pretty-num';
 
 // Delay
