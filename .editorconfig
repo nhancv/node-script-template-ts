@@ -1,12 +1,12 @@
 root = true
 
 [*]
-max_line_length = 80
-
-[**/**.{tsx,ts,json,js,css}]
-max_line_length = 150
-charset = utf-8
-trim_trailing_whitespace = true
+ij_visual_guides = none
 insert_final_newline = true
 indent_style = space
 indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+
+[*.gradle]
+indent_size = 4
