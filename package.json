@@ -8,9 +8,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "start": "ts-node src/index.ts",
+    "start": "ts-node -r tsconfig-paths/register src/index.ts",
     "start:dev": "nodemon",
-    "build": "rimraf dist; tsc --pretty && tscp",
+    "build": "rimraf dist && tsc --pretty && tscp && tsc-alias",
     "start:prod": "NODE_ENV='production' node dist/index.js",
     "pm2": "yarn build && pm2 start pm2.config.js",
     "heroku-postbuild": "echo Skip build on Heroku",
@@ -39,11 +39,11 @@
     "pretty-num": "^0.5.2"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
-    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
@@ -55,6 +55,8 @@
     "rimraf": "^4.1.2",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.15",
+    "tsconfig-paths": "^4.2.0",
     "tslib": "^2.5.0",
     "typescript": "^5.1.3",
     "typescript-cp": "^0.1.7"
