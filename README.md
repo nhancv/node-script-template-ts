@@ -110,7 +110,7 @@ COPY public content and register to git provider to allow clone repo with ssh
 
 ```
 # Start App
-pm2 --name thescript start npm -- run start:prod
+pm2 --name thescript start npm -- run start:prod --log-date-format="YYYY-MM-DD HH:mm:ss"
 ```
 
 ## Monitor
