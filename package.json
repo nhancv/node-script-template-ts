@@ -12,6 +12,7 @@
     "start:dev": "nodemon",
     "build": "rimraf dist && tsc --pretty && tscp && tsc-alias",
     "start:prod": "NODE_ENV='production' node dist/index.js",
+    "start:prod:bun": "NODE_ENV='production' bun dist/index.js",
     "pm2": "yarn build && pm2 start pm2.config.js",
     "heroku-postbuild": "echo Skip build on Heroku",
     "format": "./node_modules/.bin/prettier --write '{**/*,*}.{js,ts,jsx,tsx}'",

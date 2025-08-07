@@ -37,6 +37,24 @@ yarn start:dev
 yarn build
 ```
 
+## Start production
+
+- Run with node
+
+```
+yarn start:prod
+```
+
+- Run with bun
+
+```
+# Install bun
+curl -fsSL https://bun.sh/install | bash
+
+# Run with bun
+yarn start:prod:bun
+```
+
 ## Test
 
 - Run test
