@@ -84,7 +84,8 @@ timedatectl
 ```
 sudo apt install zip unzip
 
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+# Install node: https://nodejs.org/en/download
+curl -sL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo npm install --global yarn
 sudo npm install --global pm2
