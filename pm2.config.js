@@ -7,6 +7,7 @@ module.exports = {
       exec_mode: 'cluster',
       autorestart: true,
       watch: true,
+      time: true,
       env: {
         NODE_ENV: 'development',
       },
@@ -18,6 +19,7 @@ module.exports = {
     //   name: 'worker',
     //   script: 'dist/index.js',
     //   watch: true,
+    //   time: true,
     //   env: {
     //     ENABLE_WORKER: true,
     //   },

@@ -94,7 +94,6 @@ pm2 install pm2-logrotate
 pm2 set pm2-logrotate:max_size 10M
 pm2 set pm2-logrotate:compress true
 pm2 set pm2-logrotate:retain 10
-pm2 set pm2:log_date_format "YYYY-MM-DD HH:mm:ss"
 ```
 
 ## Setup ssh
@@ -129,7 +128,10 @@ COPY public content and register to git provider to allow clone repo with ssh
 
 ```
 # Start App
-pm2 --name thescript start npm -- run start:prod --log-date-format="YYYY-MM-DD HH:mm:ss"
+pm2 --name thescript start npm -- run start:prod --time
+
+# Restart App
+pm2 restart thescript --time
 ```
 
 ## Monitor
