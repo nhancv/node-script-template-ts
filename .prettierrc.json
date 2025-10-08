@@ -14,7 +14,7 @@
     }
   ],
   "importOrder": ["^~/(.*)$", "^[./]"],
-  "importOrderSeparation": true,
+  "importOrderSeparation": false,
   "importOrderSortSpecifiers": true,
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrderParserPlugins": ["typescript", "classProperties", "decorators-legacy"]

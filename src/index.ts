@@ -1,5 +1,4 @@
 import 'dotenv/config';
-
 import { sleep } from '~/libs/utils';
 
 const processScript = async () => {
