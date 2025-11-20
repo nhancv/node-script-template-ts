@@ -1,25 +1,26 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "lib": ["esnext"],
+    "module": "esnext",
     "target": "esnext",
-    "noImplicitAny": false,
-    "sourceMap": false,
-    "rootDir": "src",
-    "outDir": "./dist",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "downlevelIteration": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "types": ["bun-types"],
     "baseUrl": "./",
     "paths": {
       "~/*": ["src/*"]
-    },
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "jsx": "react",
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "jest"],
-    "lib": ["esnext", "dom"],
-    "useUnknownInCatchVariables": false,
-    "skipLibCheck": true
+    }
   },
-  "exclude": ["node_modules", "**/node_modules", "**/node_modules/**", "dist", "build"],
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "test/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
