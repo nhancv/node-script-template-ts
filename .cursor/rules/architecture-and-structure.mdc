@@ -1,0 +1,18 @@
+---
+description: Module boundaries and project structure conventions
+alwaysApply: true
+---
+
+# Architecture And Structure
+
+- Keep clear boundaries:
+  - `src/index.ts` as the main entry point (or explicit `src/scripts/*` entrypoints if you add multiple scripts).
+  - `src/libs` for shared, stateless helpers (logging, formatting, time, parsing, small utilities).
+  - `src/modules` for feature/business flows when the codebase grows beyond a single script.
+  - `src/configs` for configuration and environment parsing when needed.
+- Keep feature-specific behavior inside its owning module; move cross-cutting/shared logic into focused utilities (or a dedicated shared module) with clear ownership.
+- Avoid circular dependencies and cross-module leakage of internals.
+- Depend on explicit interfaces/contracts between components where practical.
+- Respect existing project patterns before introducing new ones (including existing DI vs direct-instantiation choices).
+- New files must be placed by responsibility, not by convenience.
+- Prefer extending existing cohesive modules over creating parallel structures with overlapping purposes.

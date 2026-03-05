@@ -1,0 +1,24 @@
+---
+description: Semantic commit and git operation guardrails
+alwaysApply: true
+---
+
+# Commit Conventions
+
+- Use semantic commit format: `<type>(optional-scope): <description>`.
+- Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `build`, `ci`.
+- Keep commit subject concise, imperative, and specific to the reason for change.
+- Prefer one logical change per commit; avoid mixed-purpose commits.
+
+```text
+Good:
+fix(auth): handle refresh token rotation failures
+refactor(logging): standardize request correlation metadata
+
+Bad:
+update code
+fix stuff and refactor everything
+```
+
+- Do not run `git add`, `git commit`, `git push`, `git merge`, `git rebase`, or history rewrite commands unless the user explicitly requests it in the current conversation.
+- Before creating any commit, present changed files summary and proposed commit message, then wait for explicit approval.

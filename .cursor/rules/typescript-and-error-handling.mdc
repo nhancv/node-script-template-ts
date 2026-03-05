@@ -1,0 +1,24 @@
+---
+description: TypeScript quality and robust error handling rules
+alwaysApply: true
+---
+
+# TypeScript And Error Handling
+
+- Prefer strict typing and explicit return types for non-trivial public methods.
+- Avoid `any`; if unavoidable, isolate and narrow it immediately.
+- Validate external input at boundaries (CLI args, env vars, file contents, network responses) before use.
+- In `catch`, log with structured metadata and include the original error object.
+- Treat caught errors as `unknown`; narrow before accessing properties.
+- Do not swallow exceptions silently; either handle explicitly or propagate with context.
+- Use numeric-safe utilities for money/amounts (e.g., `bigint` or a decimal library); avoid unsafe float math.
+
+```ts
+// Good
+try {
+  await run();
+} catch (error) {
+  logger.error({ event: 'script.run.failed', err: error }, 'Script execution failed');
+  throw error;
+}
+```

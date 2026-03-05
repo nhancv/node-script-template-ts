@@ -1,0 +1,14 @@
+---
+description: Safe change workflow and scope control
+alwaysApply: true
+---
+
+# Change Safety And Scope
+
+- Make minimal, targeted edits directly related to the user request.
+- Do not create extra tests, demos, docs, or helper scripts unless explicitly requested.
+- Do not perform Git write operations (`add`, `commit`, `push`, history rewrites) without explicit user instruction.
+- Never use destructive git commands unless explicitly approved.
+- Keep unrelated files untouched; do not refactor adjacent code opportunistically.
+- After substantial edits, run local static validation (lint/type-check) and fix introduced issues.
+- Prefer non-breaking refactors: preserve API shape, status transitions, side effects, and persistence behavior.

@@ -1,0 +1,35 @@
+---
+description: Logging standards (pino)
+globs: src/**/*.ts
+alwaysApply: true
+---
+
+# Logging standards
+
+- Use the project's `logger` (pino) and import it from the shared logger module (e.g., `~/libs/utils`). Avoid `console.*` in runtime code.
+- Prefer **single-line** logs. Use structured fields (objects) over string concatenation.
+- **Event naming**: dot-separated, lowercase. Examples: `http.request.completed`, `auth.login.failed`, `db.query.slow`, `job.process.started`.
+- **Context**: include correlation identifiers when applicable (e.g., `requestId`, `traceId`) and relevant identifiers (e.g., `userId`, `jobId`, `scriptName`, `durationMs`).
+- **Errors**: log with context and keep the original error object/stack.
+- **Do not log secrets**: passwords, tokens, cookies, auth headers, private keys, encrypted payloads, or full signed blobs. Prefer hashes/IDs and redact sensitive fields.
+
+## Examples
+
+```ts
+// ✅ GOOD
+logger.info({ event: 'job.process.started', jobId }, 'Job started');
+
+// ✅ GOOD
+logger.info(
+  { event: 'job.process.completed', jobId, durationMs },
+  'Job completed',
+);
+
+// ✅ GOOD
+logger.error({ event: 'job.process.failed', jobId, err: error }, 'Job failed');
+
+// ❌ BAD
+console.log('debug', payload);
+logger.error(`failed: ${error instanceof Error ? error.message : String(error)}`);
+```
+

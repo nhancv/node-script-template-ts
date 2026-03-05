@@ -1,0 +1,15 @@
+---
+description: Core engineering standards for production-grade code
+alwaysApply: true
+---
+
+# Core Engineering Standards
+
+- Preserve existing runtime behavior unless the user explicitly asks to change business logic.
+- Apply SOLID, DRY, KISS, and YAGNI; prefer simple composable designs over speculative abstractions.
+- Keep functions focused and cohesive; use guard clauses to avoid deep nesting.
+- Use precise names that describe intent; avoid ambiguous names and hidden side effects.
+- Write code, comments, identifiers, and messages in English only.
+- Add comments only for non-obvious decisions (why), not for obvious operations (what).
+- Never leave placeholder code (`TODO`, `FIXME`, stubs) unless explicitly requested.
+- Prefer maintainability and readability when multiple correct implementations exist.
